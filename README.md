@@ -66,6 +66,16 @@ Uma API em Node para um sistema de academia de Crossfit.
 | `gymId [FK]` | `string` | **Obrigatório**. Id da academia que o treino será adicionado |
 | `description` | `string` | **Obrigatório**. Descrição do Treino |
 
+#### Faz matrícula em uma academia
+```http
+  POST /subscription/create
+```
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `userId [FK]` | `string` | **Obrigatório**. Id do usuário a ser matriculado |
+| `gymId [FK]` | `string` | **Obrigatório**. Id da academia que o usuário se matriculará |
+
 
 ## Instalação
 
@@ -107,6 +117,8 @@ Por último, deve-se criar uma variável de ambiente no arquivo .env com a chave
 ## Anotações
 * Tirei as validações da senha.
 * Precisa de um middleware nas rotas privadas (criar treino, criar academia)
+* Pode mais de um treinador por aula?
+* Se tem mais de uma academia, usuário tem que fazer matrícula? Se sim precisa de uma tabela para matrícula, se não não pode ter mais de uma academia.
 
 
 

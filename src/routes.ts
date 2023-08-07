@@ -5,6 +5,7 @@ import { LoginController } from "./controllers/auth/LoginController";
 import { ValidateTokenController } from "./controllers/auth/ValidateTokenController";
 import { CreateGymController } from "./controllers/gym/CreateGymController";
 import { CreateTrainingController } from "./controllers/training/CreateTrainingController";
+import { CreateSubscriptionController } from "./controllers/subscription/CreateSubscriptionController";
 
 const routes = Router()
 
@@ -21,5 +22,9 @@ routes.post("/gym/create", new CreateGymController().handle)
 
 // TRAINING
 routes.post("/training/create", new CreateTrainingController().handle)
+
+// SUBSCRIPTION
+routes.post("/subscription/create", new CreateSubscriptionController().handle)
+
 
 export { routes };

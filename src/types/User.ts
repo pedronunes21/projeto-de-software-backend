@@ -15,3 +15,7 @@ export interface LoginRequest {
 export interface UserToken {
     token: string;
 }
+
+export interface GetUserByIdRequest {
+    id: string;
+}
