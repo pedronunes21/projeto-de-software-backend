@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import ValidateTokenService from "../services/ValidateTokenService";
+import { CreateUserService } from "../../services/user/CreateUserService";
 
-export class ValidateTokenController {
+export class CreateUserController {
 
     async handle(request: Request, response: Response) {
         const props = request.body;
 
-        const data = await new ValidateTokenService().execute({ ...props })
+        const data = await new CreateUserService().execute({ ...props })
 
         if (data.status >= 300) {
             response.status(data.status).json({

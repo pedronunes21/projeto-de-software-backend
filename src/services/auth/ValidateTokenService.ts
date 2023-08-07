@@ -1,4 +1,5 @@
 import jwt from 'jsonwebtoken'
+import { UserToken } from '../../types/User';
 
 export default class ValidateTokenService {
     async execute(props: UserToken) {

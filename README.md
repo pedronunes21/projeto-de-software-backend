@@ -44,6 +44,28 @@ Uma API em Node para um sistema de academia de Crossfit.
 | :---------- | :--------- | :---------------------------------- |
 | `token` | `string` | **Obrigatório**. Token a ser validado |
 
+#### Cria uma academia
+```http
+  POST /gym/create
+```
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `name` | `string` | **Obrigatório**. Nome da Academia |
+| `address` | `string` | **Obrigatório**. Endereço da Academia |
+| `description` | `string` | **Obrigatório**. Descrição da Academia |
+
+#### Cria um Treino
+```http
+  POST /training/create
+```
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `category` | `string` | **Obrigatório**. Categoria do Treino |
+| `gymId [FK]` | `string` | **Obrigatório**. Id da academia que o treino será adicionado |
+| `description` | `string` | **Obrigatório**. Descrição do Treino |
+
 
 ## Instalação
 
@@ -84,6 +106,7 @@ Por último, deve-se criar uma variável de ambiente no arquivo .env com a chave
 
 ## Anotações
 * Tirei as validações da senha.
+* Precisa de um middleware nas rotas privadas (criar treino, criar academia)
 
 
 

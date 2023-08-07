@@ -1,5 +1,5 @@
 
-interface CreateUserRequest {
+export interface CreateUserRequest {
     email: string;
     password: string;
     name: string;
@@ -7,11 +7,11 @@ interface CreateUserRequest {
     permission?: number;
 }
 
-interface LoginRequest {
+export interface LoginRequest {
     email: string;
     password: string;
 }
 
-interface UserToken {
+export interface UserToken {
     token: string;
 }

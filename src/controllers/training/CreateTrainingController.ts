@@ -1,12 +1,12 @@
 import { Request, Response } from "express";
-import { LoginService } from "../services/LoginService";
+import { CreateTrainingService } from "../../services/training/CreateTrainingService";
 
-export class LoginController {
+export class CreateTrainingController {
 
     async handle(request: Request, response: Response) {
         const props = request.body;
 
-        const data = await new LoginService().execute({ ...props })
+        const data = await new CreateTrainingService().execute({ ...props })
 
         if (data.status >= 300) {
             response.status(data.status).json({

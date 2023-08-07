@@ -1,5 +1,5 @@
-import { AppDataSource } from "../data-source";
-import { User } from "../entities/User";
+import { AppDataSource } from "../../data-source";
+import { User } from "../../entities/User";
 
 export default class ListUsersService {
     async execute() {

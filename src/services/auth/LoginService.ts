@@ -1,7 +1,8 @@
-import { AppDataSource } from "../data-source";
-import { User } from "../entities/User";
+import { AppDataSource } from "../../data-source";
+import { User } from "../../entities/User";
 import { compare } from "bcrypt"
 import jwt from 'jsonwebtoken'
+import { LoginRequest } from "../../types/User";
 
 export class LoginService {
 

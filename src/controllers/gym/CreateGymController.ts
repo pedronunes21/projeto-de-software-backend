@@ -1,10 +1,12 @@
 import { Request, Response } from "express";
-import ListUsersService from "../services/ListUsersService";
+import { CreateGymService } from "../../services/gym/CreateGymService";
 
-export class ListUsersController {
+export class CreateGymController {
 
     async handle(request: Request, response: Response) {
-        const data = await new ListUsersService().execute()
+        const props = request.body;
+
+        const data = await new CreateGymService().execute({ ...props })
 
         if (data.status >= 300) {
             response.status(data.status).json({

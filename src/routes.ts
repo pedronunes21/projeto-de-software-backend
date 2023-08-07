@@ -1,16 +1,25 @@
 import { Router } from "express";
-import { CreateUserController } from "./controllers/CreateUserController";
-import { ListUsersController } from "./controllers/ListUsersController";
-import { LoginController } from "./controllers/LoginController";
-import { ValidateTokenController } from "./controllers/ValidateTokenController";
+import { CreateUserController } from "./controllers/user/CreateUserController";
+import { ListUsersController } from "./controllers/user/ListUsersController";
+import { LoginController } from "./controllers/auth/LoginController";
+import { ValidateTokenController } from "./controllers/auth/ValidateTokenController";
+import { CreateGymController } from "./controllers/gym/CreateGymController";
+import { CreateTrainingController } from "./controllers/training/CreateTrainingController";
 
 const routes = Router()
 
+// USERS
 routes.get("/users", new ListUsersController().handle)
-
 routes.post("/register", new CreateUserController().handle)
-routes.post("/login", new LoginController().handle)
 
+// AUTH
+routes.post("/login", new LoginController().handle)
 routes.post("/token/validate", new ValidateTokenController().handle)
+
+// GYM
+routes.post("/gym/create", new CreateGymController().handle)
+
+// TRAINING
+routes.post("/training/create", new CreateTrainingController().handle)
 
 export { routes };
