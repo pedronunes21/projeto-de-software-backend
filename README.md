@@ -76,6 +76,21 @@ Uma API em Node para um sistema de academia de Crossfit.
 | `userId [FK]` | `string` | **Obrigatório**. Id do usuário a ser matriculado |
 | `gymId [FK]` | `string` | **Obrigatório**. Id da academia que o usuário se matriculará |
 
+#### Cria uma aula
+```http
+  POST /lesson/create
+```
+
+| Parâmetro   | Tipo       | Descrição                           |
+| :---------- | :--------- | :---------------------------------- |
+| `trainingId [FK]` | `string` | **Obrigatório**. Id do treino |
+| `gymId [FK]` | `string` | **Obrigatório**. Id da academia |
+| `maxUsers` | `integer` | **Obrigatório**. Máximo de usuários que podem participar da aula |
+| `time` | `string` | **Obrigatório**. Hora da aula. ex: "9:30", "21:05" |
+| `title` | `string` | **Obrigatório**. Título da aula |
+| `weekDay` | `integer` | **Obrigatório**. Número de 0 a 6 correspondente aos dias da semana |
+
+
 
 ## Instalação
 
@@ -119,6 +134,9 @@ Por último, deve-se criar uma variável de ambiente no arquivo .env com a chave
 * Precisa de um middleware nas rotas privadas (criar treino, criar academia)
 * Pode mais de um treinador por aula?
 * Se tem mais de uma academia, usuário tem que fazer matrícula? Se sim precisa de uma tabela para matrícula, se não não pode ter mais de uma academia.
+* Criar uma tabela de permissões com userId e gymId, para saber se o usuário tem permissão naquela academia
+* Falta adicionar treinador na aula
+* Criar uma tabela para treinadores, para que uma aula possa ter mais de um treinador
 
 
 

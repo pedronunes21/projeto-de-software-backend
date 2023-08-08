@@ -4,3 +4,7 @@ export interface CreateTrainingRequest {
     description: string;
     gymId: string;
 }
+
+export interface GetTrainingByIdRequest {
+    id: string;
+}
